@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #080808;
+  color: #f5f2f0;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes about-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes about-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes about-orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes stack-hub-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 36px rgba(232, 183, 200, 0.22),
+      inset 0 0 20px rgba(232, 183, 200, 0.08);
+  }
+  50% {
+    box-shadow: 0 0 48px rgba(232, 183, 200, 0.36),
+      inset 0 0 24px rgba(232, 183, 200, 0.14);
+  }
+}
+
+/* Process section's ghost numerals — ordinary hover selectors are more
+   reliable here than Tailwind's arbitrary-bracket syntax combined with a
+   vendor-prefixed property. */
+.process-ghost-num {
+  color: transparent;
+  -webkit-text-stroke: 1px #504045;
+  transition: -webkit-text-stroke-color 0.3s ease;
+}
+.process-step:hover .process-ghost-num {
+  -webkit-text-stroke-color: #e8b7c8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
