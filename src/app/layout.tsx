@@ -25,10 +25,7 @@ const description =
   "Full-stack developer building complete products — frontend, backend, databases, and deployment.";
 
 export const metadata: Metadata = {
-  // TODO: replace with the real deployed domain once you have one — this
-  // is what turns the OG/Twitter image paths below into absolute URLs
-  // that social platforms can actually fetch.
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://portfolio-site-two-woad.vercel.app"),
   title,
   description,
   openGraph: {
